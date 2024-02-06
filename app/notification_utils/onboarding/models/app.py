@@ -3,7 +3,7 @@ from django.utils import timezone
 
 
 class Application(models.Model):
-    appId = models.CharField(max_length=16)
+    appId = models.CharField(max_length=36)
     name = models.CharField(max_length=30)
     password = models.CharField(max_length=256)
     created_at = models.DateTimeField(default=timezone.now)
