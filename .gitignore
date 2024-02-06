@@ -5,5 +5,8 @@ build/
 
 **/*.egg-info
 
+app/app
+app/manage.py
+
 cleanup.py
 run.py

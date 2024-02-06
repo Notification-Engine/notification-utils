@@ -22,6 +22,10 @@ class PayloadMapping(models.Model):
     description = models.TextField()
     mappingJSON = models.TextField()
 
+    class Meta:
+        app_label = 'Platform'
+        db_table = 'payload_mappings'
+
     def __str__(self):
         return f"{self.name} [{self.app.name}]"
 

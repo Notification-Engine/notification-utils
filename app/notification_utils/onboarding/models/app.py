@@ -9,6 +9,10 @@ class Application(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(default=timezone.now)
 
+    class Meta:
+        app_label = 'Platform'
+        db_table = 'applications'
+
     def __str__(self):
         return self.name
 
