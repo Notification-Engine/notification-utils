@@ -1,1 +1,3 @@
-from .payload import refresh_payload_mapping_pickup_conditions
+from .cache_manager import refresh_cache
+
+refresh_cache()
