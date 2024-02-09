@@ -14,3 +14,7 @@ class Event(models.Model):
 
     def __str__(self):
         return f"{self.event_id} ({self.title})"
+
+    @classmethod
+    def create_from_dict(cls, event):
+        return cls(**event)
