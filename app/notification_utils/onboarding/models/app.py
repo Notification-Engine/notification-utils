@@ -6,6 +6,8 @@ class Application(models.Model):
     appId = models.CharField(max_length=36)
     name = models.CharField(max_length=30)
     password = models.CharField(max_length=256)
+    subscriptions = models.ManyToManyField(
+        'PayloadMapping', related_name='subscribed_apps')
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(default=timezone.now)
 
