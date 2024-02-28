@@ -24,6 +24,7 @@ class AppDeviceSubscriptions(models.Model):
     def get_frontend_data(self):
         payload_json = self.payload.to_dict()
         payload_json.update({
+            'id': self.id,
             'is_subscribed': self.is_subscribed,
         })
         return payload_json
