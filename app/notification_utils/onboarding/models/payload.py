@@ -29,6 +29,9 @@ class PayloadMapping(models.Model):
     def __str__(self):
         return f"{self.name} [{self.app.name}]"
 
+    def get_firebase_topic_name(self):
+        return f"topic-{self.id}"
+
     def to_dict(self):
         return {
             'app': self.app.name,
