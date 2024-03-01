@@ -3,7 +3,7 @@ from django.db import models
 from .app import Application
 
 
-class Device(models.Model):
+class AppInstance(models.Model):
     """
     Specifies an app instance on a device
     [DOES NOT UNIQUELY IDENTIFY A DEVICE]
@@ -18,11 +18,11 @@ class Device(models.Model):
 
     class Meta:
         app_label = 'Platform'
-        db_table = 'devices'
+        db_table = 'app_instances'
         constraints = [
             models.UniqueConstraint(fields=['device_id', 'connected_app'],
                                     name='unique app device combination')
         ]
 
     def __str__(self):
-        return self.device_id
+        return f"{self.connected_app} - {self.device_id}"
