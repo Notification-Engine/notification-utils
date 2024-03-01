@@ -19,6 +19,10 @@ class Device(models.Model):
     class Meta:
         app_label = 'Platform'
         db_table = 'devices'
+        constraints = [
+            models.UniqueConstraint(fields=['device_id', 'connected_app'],
+                                    name='unique app device combination')
+        ]
 
     def __str__(self):
         return self.device_id
