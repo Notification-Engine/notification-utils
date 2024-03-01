@@ -30,7 +30,7 @@ class PayloadMapping(models.Model):
         return f"{self.name} [{self.app.name}]"
 
     def get_firebase_topic_name(self):
-        return f"topic-{self.id}"
+        return f"subscription-{self.id}"
 
     def to_dict(self):
         return {
