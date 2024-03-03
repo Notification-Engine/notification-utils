@@ -8,6 +8,8 @@ class Application(models.Model):
     password = models.CharField(max_length=256)
     subscriptions = models.ManyToManyField(
         'PayloadMapping', related_name='subscribed_apps')
+    android_appname = models.CharField(max_length=30, null=True, blank=True)
+    android_package = models.CharField(max_length=256, null=True, blank=True)
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(default=timezone.now)
 
